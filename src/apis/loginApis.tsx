@@ -35,7 +35,6 @@ export const create = async (data: any) => {
   return res.data;
 };
 export const getData = async (data: any) => {
-  debugger;
   let data1 = JSON.stringify({
     "OrganizationId": 9,
     "CompanyId": 9

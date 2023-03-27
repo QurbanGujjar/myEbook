@@ -8,7 +8,7 @@ import { getData } from '../apis/loginApis';
 
 function Home() {
   const { isLoading, error, data } = useQuery('repoData', getData);
-console.log(isLoading, error, data )
+  console.log(isLoading, error, data);
 
   function createOrUpdateModalOpen(value: any) {
     debugger;
@@ -63,7 +63,7 @@ console.log(isLoading, error, data )
         <Dropdown
           menu={{
             items,
-            onClick: () => createOrUpdateModalOpen({ id: item.key }),
+            onClick: () => createOrUpdateModalOpen({ id: item.Id }),
           }}
         >
           <a onClick={(e) => e.preventDefault()}>

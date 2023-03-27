@@ -9,19 +9,27 @@ import {
 } from '../component/common/inputField';
 import { form_component as Form } from '../component/common/form_component';
 import { create } from '../apis/loginApis';
+import { Modal } from 'antd';
 
 const Login = () => {
   const history = useNavigate();
   const SignInMutation = useMutation(create, {
     onSuccess: (res: any) => {
       debugger;
-      // Modal.success({ content: `signIn successfully` });
-      localStorage.setItem('token', `${res.data.access_token}`);
+      Modal.success({ content: `signIn successfully` ,footer: null});
+      setTimeout(() => {
+        Modal.destroyAll()
+}, 1000)
+      localStorage.setItem('token', `${res.access_token}`);
       history('/home');
     },
-    onError(error, variables, context) {
-      debugger;
-      console.log(error, variables, context);
+    onError(error) {
+
+      console.log(error);
+      Modal.error({ content: (error as any).response.data.error_description ,footer: null});
+      setTimeout(() => {
+        Modal.destroyAll()
+}, 2000)
     },
   });
 
