@@ -9,12 +9,6 @@ const todosApi = axios.create({
   },
 });
 
-// export const getAll = async () => {
-//     debugger
-//     const response = await todosApi.get("/api/COAAllocation/AccountsComboFill")
-//     return response.data
-// }
-
 export const create = async (data: any) => {
   debugger;
   const queryString = new URLSearchParams(data).toString();
@@ -34,40 +28,4 @@ export const create = async (data: any) => {
   let res = await axios.request(config);
   return res.data;
 };
-export const getData = async (data: any) => {
-  let data1 = JSON.stringify({
-    "OrganizationId": 9,
-    "CompanyId": 9
-  });
-  let config = {
-    method: 'post',
-    maxBodyLength: Infinity,
-    url: 'http://5.161.113.248:97/api/COAAllocation/AccountsComboFill',
-    headers: { 
-      Authorization: `Bearer ${token}`,
-      'Content-Type': 'application/json'
-    },
-    data : data1
-  };
-
-  let res = await axios.request(config);
-  return res;
-};
-
-// export const create = async (data: any) => {
-//   debugger;
-//   const queryString = new URLSearchParams(data).toString()
-
-//   const response = await todosApi.post(`/token` , { queryString });
-//   return response;
-// };
-
-// export const update = async (todo:any) => {
-//     return await todosApi.patch(`/todos/${todo.id}`, todo)
-// }
-
-// export const remove = async ({id }:any) => {
-//     return await todosApi.delete(`/todos/${id}`, id)
-// }
-
 export default todosApi;
