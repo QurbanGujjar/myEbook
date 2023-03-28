@@ -1,7 +1,7 @@
-import { Button, Card, Menu, Table, Tag } from 'antd';
+import { Button, Card, Table, } from 'antd';
 import { SettingOutlined } from '@ant-design/icons';
 import type { MenuProps } from 'antd';
-import { Dropdown, message, Space } from 'antd';
+import { Dropdown, Space } from 'antd';
 import { useQuery } from 'react-query';
 import customerApis from '../apis/customerApis';
 function Home() {
