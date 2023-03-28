@@ -5,38 +5,12 @@ import type { MenuProps } from 'antd';
 import { Dropdown, message, Space } from 'antd';
 import { useQuery } from 'react-query';
 import customerApis from '../apis/customerApis';
-
 function Home() {
   const { isLoading, error, data } = useQuery('repoData', customerApis.getData);
   console.log(isLoading, error, data);
-
   function createOrUpdateModalOpen(value: any) {
     debugger;
   }
-  const dataSource = [
-    {
-      key: '1',
-      firstName: 'tabiat',
-      lastName: 'sabz pars',
-      userName: 'tabiat',
-      partyName: 'tabiat check',
-    },
-    {
-      key: '2',
-      firstName: 'Bilal',
-      lastName: 'khan',
-      userName: 'bilal khan',
-      partyName: 'hannan tejarat',
-    },
-    {
-      key: '3',
-      firstName: 'jaan',
-      lastName: 'zaib',
-      userName: 'jaan zaib',
-      partyName: 'unknown',
-    },
-  ];
-
   const columns = [
     {
       title: 'Account Title',
@@ -44,19 +18,6 @@ function Home() {
       key: 'AccountTitle'+Math.random(),
       with:150,
     },
-
-    // {
-    //   title: 'IsActive',
-    //   dataIndex: 'isActive',
-    //   key: 'isActive',
-    //   width: 150,
-    //   render: (text: boolean) =>
-    //     text === true ? (
-    //       <Tag color="#2db7f5">{'Yes'}</Tag>
-    //     ) : (
-    //       <Tag color="red">{'No'}</Tag>
-    //     ),
-    // },
     {
       title: 'Actions',
       width: 150,
