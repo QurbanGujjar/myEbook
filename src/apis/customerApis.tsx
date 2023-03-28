@@ -1,5 +1,3 @@
-import axios from 'axios';
-let token = localStorage.getItem('token');
 import http from '../services/httpService';
 class customerApis {
     public getData = async (data: any) => {
@@ -11,7 +9,6 @@ class customerApis {
         debugger
         console.log(res)
         return res
-
     };
 }
 export default new customerApis();
