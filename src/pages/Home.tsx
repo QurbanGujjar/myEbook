@@ -4,10 +4,10 @@ import { DownOutlined } from '@ant-design/icons';
 import type { MenuProps } from 'antd';
 import { Dropdown, message, Space } from 'antd';
 import { useQuery } from 'react-query';
-import { getData } from '../apis/loginApis';
+import customerApis from '../apis/customerApis';
 
 function Home() {
-  const { isLoading, error, data } = useQuery('repoData', getData);
+  const { isLoading, error, data } = useQuery('repoData', customerApis.getData);
   console.log(isLoading, error, data);
 
   function createOrUpdateModalOpen(value: any) {
@@ -41,7 +41,8 @@ function Home() {
     {
       title: 'Account Title',
       dataIndex: 'AccountTitle',
-      key: 'AccountTitle',
+      key: 'AccountTitle'+Math.random(),
+      with:150,
     },
 
     // {
