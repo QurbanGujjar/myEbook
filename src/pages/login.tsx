@@ -8,7 +8,7 @@ import {
   InputPassword as InputP,
 } from '../component/common/inputField';
 import { form_component as Form } from '../component/common/form_component';
-import { create } from '../apis/loginApis';
+import { create } from '../services/loginApis';
 import { Modal } from 'antd';
 
 const Login = () => {
@@ -24,7 +24,7 @@ const Login = () => {
       history('/home');
     },
     onError(error) {
-
+debugger
       console.log(error);
       Modal.error({ content: (error as any).response.data.error_description ,footer: null});
       setTimeout(() => {
