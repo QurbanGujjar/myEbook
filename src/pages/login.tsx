@@ -21,7 +21,7 @@ const Login = () => {
         Modal.destroyAll()
 }, 1000)
       localStorage.setItem('token', `${res.access_token}`);
-      history('/home');
+      history('/');
     },
     onError(error) {
 debugger
