@@ -3,7 +3,7 @@ import { SettingOutlined } from '@ant-design/icons';
 import type { MenuProps } from 'antd';
 import { Dropdown, Space } from 'antd';
 import { useQuery } from 'react-query';
-import customerApis from '../apis/customerApis';
+import customerApis from '../services/customerApis';
 function Home() {
   const { isLoading, error, data } = useQuery('repoData', customerApis.getData);
   console.log(isLoading, error, data);
@@ -57,6 +57,7 @@ function Home() {
         columns={columns}
         className="pt-10"
         bordered
+        loading={isLoading}
       />
     </Card>
   );
